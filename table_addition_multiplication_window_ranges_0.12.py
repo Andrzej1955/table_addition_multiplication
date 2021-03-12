@@ -79,6 +79,36 @@ class Application(Frame):
         #etykieta z pustą linią nad oknem tytułu tabliczki
         self.linia = Label(self, font = ('Courier New', 5),text = " ").grid(row = 16, column = 1)
 
+        # utwórzenie zmiennej, która ma reprezentować wybór nowej tabliczki dodawania
+        self.table_a = StringVar()
+        self.table_a.set(None)
+        # utwórzenie przycisku opcji do wyboru tabliczki dodawania nowa
+        Radiobutton(self, font=('Calibri', 10),
+                    text = "Nowa tabliczka",
+                    indicatoron = 0,
+                    width = 19,
+                    variable = self.table_a,
+                    value = "n",
+                    command = self.addition_table_new
+                    ).grid(row = 17, column = 1,columnspan = 4)
+
+        # utwórzenie zmiennej, która ma reprezentować wybór nowej tabliczki mnożenia
+        self.table_m = StringVar()
+        self.table_m.set(None)
+        # utwórzenie przycisku opcji do wyboru tabliczki mnożenia
+        Radiobutton(self, font=('Calibri', 10),
+                    text = "Nowa tabliczka",
+                    indicatoron = 0,
+                    width = 19,
+                    variable = self.table_m,
+                    value = "n",
+                    command = self.multiplication_table_new
+                    ).grid(row = 17, column = 8,columnspan = 4)#, sticky = E)
+
+
+        #etykieta z pustą linią nad przycIskiem nowych tabliczek
+        self.linia = Label(self, font = ('Courier New', 5),text = " ").grid(row = 18, column = 1)
+
         self.range_a = StringVar()
         self.range_a.set(None)#'p')
         # utwórzenie przycisku opcji do wyboru tabliczki dodawania nowa
@@ -90,7 +120,7 @@ class Application(Frame):
                     variable = self.range_a,
                     value = "p",
                     command = self.addition_table_new_range
-                    ).grid(row = 17, column = 1,columnspan = 2, sticky = W)
+                    ).grid(row = 19, column = 1,columnspan = 2, sticky = W)
 
         # utwórzenie przycisku opcji do wyboru tabliczki dodawania kontynuacja
         Radiobutton(self, font=('Calibri', 10),
@@ -101,7 +131,7 @@ class Application(Frame):
                     variable = self.range_a,
                     value = "r",
                     command = self.addition_table_new_range
-                    ).grid(row = 17, column = 3, columnspan = 2, sticky = E)
+                    ).grid(row = 19, column = 3, columnspan = 2, sticky = E)
 
         #utwórzenie zmiennej, która ma reprezentować wybór zakresu
         #zakres zmiennych tabliczki dodawania: 1 ÷ 10 lub 1 ÷ 100
@@ -116,7 +146,7 @@ class Application(Frame):
                     height = 2,
                     value = "p",
                     command = self.multiplication_table_new_range
-                    ).grid(row = 17, column = 8,columnspan = 2, sticky = W)
+                    ).grid(row = 19, column = 8,columnspan = 2, sticky = W)
 
         # utwórzenie przycisku opcji do wyboru tabliczki dodawania kontynuacja
         Radiobutton(self, font=('Calibri', 10),
@@ -127,37 +157,7 @@ class Application(Frame):
                     variable = self.range_m,
                     value = "r",
                     command = self.multiplication_table_new_range
-                    ).grid(row = 17, column = 10, columnspan = 2, sticky = E)
-
-        #etykieta z pustą linią nad przycoskiem nowych tabliczek
-        self.linia = Label(self, font = ('Courier New', 5),text = " ").grid(row = 18, column = 1)
-
-        # utwórzenie zmiennej, która ma reprezentować wybór nowej tabliczki dodawania
-        self.table_a = StringVar()
-        self.table_a.set(None)
-        # utwórzenie przycisku opcji do wyboru tabliczki dodawania nowa
-        Radiobutton(self, font=('Calibri', 10),
-                    text = "Nowa tabliczka",
-                    indicatoron = 0,
-                    width = 19,
-                    variable = self.table_a,
-                    value = "n",
-                    command = self.addition_table_new
-                    ).grid(row = 19, column = 1,columnspan = 4)
-
-        # utwórzenie zmiennej, która ma reprezentować wybór nowej tabliczki mnożenia
-        self.table_m = StringVar()
-        self.table_m.set(None)
-        # utwórzenie przycisku opcji do wyboru tabliczki mnożenia
-        Radiobutton(self, font=('Calibri', 10),
-                    text = "Nowa tabliczka",
-                    indicatoron = 0,
-                    width = 19,
-                    variable = self.table_m,
-                    value = "n",
-                    command = self.multiplication_table_new
-                    ).grid(row = 19, column = 8,columnspan = 4)#, sticky = E)
-
+                    ).grid(row = 19, column = 10, columnspan = 2, sticky = E)
         #etykieta z pustą linią nad oknem tytułu tabliczki
         self.linia = Label(self, font = ('Courier New', 11),text = " ").grid(row = 25, column = 1)
 
